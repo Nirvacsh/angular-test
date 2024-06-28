@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="text-xl font-semibold mb-4">Currency Converter</h2>
+  <div class="row">
+    <input
+      type="number"
+      [(ngModel)]="amount1"
+      (input)="convertCurrency1()"
+      (blur)="formatAmount1()"
+      class="border border-gray-300 rounded px-3 py-2"
+    />
+    <select
+      [(ngModel)]="currency1"
+      (change)="convertCurrency1()"
+      class="border border-gray-300 rounded px-3 py-2"
+    >
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+  </div>
+  <div class="row">
+    <input
+      type="number"
+      [(ngModel)]="amount2"
+      (input)="convertCurrency2()"
+      (blur)="formatAmount2()"
+      class="border border-gray-300 rounded px-3 py-2"
+    />
+    <select
+      [(ngModel)]="currency2"
+      (change)="convertCurrency2()"
+      class="border border-gray-300 rounded px-3 py-2"
+    >
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+  </div>
+</div>
